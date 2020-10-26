@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <img alt="Virus logo" src="../assets/logo.svg">
     <StatTable
       :covidDataCountries = "apiData.Countries"
       :covidDataDate = "apiData.Date"
