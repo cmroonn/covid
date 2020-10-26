@@ -4,6 +4,7 @@
     <StatTable
       :covidDataCountries = "apiData.Countries"
       :covidDataDate = "apiData.Date"
+      @getDatePeriod="ss"
     />
   </div>
 </template>
@@ -23,13 +24,20 @@ export default {
   computed: {
     ...mapGetters([
       'apiData',
+      'countriesSlugs',
     ]),
+
   },
 
   methods: {
     ...mapActions([
       'getApiData',
+      'getPeriodApiData',
     ]),
+
+    ss(period) {
+      this.getPeriodApiData(period);
+    },
   },
 
   mounted() {
